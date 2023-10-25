@@ -5,8 +5,8 @@ public class Main{
         //ex1();
         //ex2();
         //ex3();
-        ex4();
-        //ex5();
+        //ex4();
+        ex5();
     }
 
     private static void ex1() {
@@ -53,6 +53,17 @@ public class Main{
     }
 
     private static void ex5() {
-        System.out.println("Todo....");
+        double tax = 1.10;
+        var shoppingCart = new ShoppingCart(5.0);
+        shoppingCart.addItem(new Item(2.00F, 4, "Socks"));
+        shoppingCart.addItem(new Item(10.00F, 2, "Shirts"));
+        shoppingCart.calculateTotal();
+        if(shoppingCart.getTotal()<10.0){
+            shoppingCart.addShipping();
+        }
+        System.out.println(shoppingCart.getTotal()*tax);
+
+        var invoice = shoppingCart.shipOrder("Jon Smith", "123 Green Street", "Austin", "TX", 78737);
+        System.out.println(invoice);
     }
 }
