@@ -61,9 +61,21 @@ public class Main{
         if(shoppingCart.getTotal()<10.0){
             shoppingCart.addShipping();
         }
-        System.out.println(shoppingCart.getTotal()*tax);
 
         var invoice = shoppingCart.shipOrder("Jon Smith", "123 Green Street", "Austin", "TX", 78737);
         System.out.println(invoice);
+        for(Item item : shoppingCart.getItems()){
+            System.out.print(item.getItemName() + "\t$" + item.getPrice() + "\t(" + item.getQuantity()+ ")\t$" + (item.getPrice()*item.getQuantity()) + "\n\nShipping: ");
+            if(item.getPrice()*item.getQuantity()>=10){
+                System.out.print("Free\n\n");
+            }else{
+                System.out.print(shoppingCart.getShipCharge() +"\n\n");
+            }
+
+            System.out.println("Total Cost:\n----------");
+            System.out.println(shoppingCart.getTotal());
+
+        }
+
     }
 }

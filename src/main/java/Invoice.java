@@ -14,6 +14,9 @@ public class Invoice {
     }
 
     public String toString(){
-        return("" + this.name + "\n" + this.address + "\n" + this.city + ", " + this.state + " " + this.zipCode);
+        return("Ship to: \n\t" + this.name + "\n\t" + this.address + "\n\t" + this.city + ", " + this.state + " " + this.zipCode + "\n\nItems\n-----");
+
     }
+
+
 }

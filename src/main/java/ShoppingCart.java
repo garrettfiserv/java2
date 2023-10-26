@@ -38,6 +38,14 @@ public class ShoppingCart {
 
     }
 
+    public ArrayList<Item> getItems(){
+        return items;
+    }
+
+    public double getShipCharge(){
+        return this.shipCharge;
+    }
+
 
 
 }

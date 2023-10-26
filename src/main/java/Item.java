@@ -22,4 +22,8 @@ public class Item {
     public int getQuantity(){
         return this.quantity;
     }
+
+    public String getItemName(){
+        return this.itemName;
+    }
 }
